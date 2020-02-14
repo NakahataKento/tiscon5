@@ -82,6 +82,19 @@ public class EstimateController {
         return "confirm";
     }
 
+
+    /**
+     * エラー
+
+    @PostMapping(value = "submit", params = "inputerror")
+    String inputerror(UserOrderForm userOrderForm, Model model) {
+
+        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("userOrderForm", userOrderForm);
+        return "inputerror";
+    }
+    */
+
     /**
      * 入力画面に戻る。
      *
