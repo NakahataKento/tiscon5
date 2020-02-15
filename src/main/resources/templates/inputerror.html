@@ -19,115 +19,161 @@
             <fieldset>
                 <legend>個人情報</legend>
                 <div class="form-group">
-                    <label for="customerName">氏名</label>
+                    <label for="customerName">氏名</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${# fields.hasErrors('customerName')}">
-                            <li th:each="err : ${#fields.errors('customerName')}" th:text="${err}"></li>
-                    </ul>
+                        <nobr th:if="${# fields.hasErrors('customerName')}">
+                            <nobr th:each="err : ${#fields.errors('customerName')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
+                    <div th:unless="${# fields.hasErrors('customerName')}">
+                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎">
+                    </div>
                     <div th:if="${# fields.hasErrors('customerName')}">
-                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" style="background-color:#FF0000"/>
+                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" style="background-color:#FADBDA">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="tel">連絡先TEL</label>
+                    <label for="tel">連絡先TEL</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('tel')}">
-                            <li th:each="err : ${#fields.errors('tel')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('tel')}">
+                            <nobr th:each="err : ${#fields.errors('tel')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+                    <div th:unless="${#fields.hasErrors('tel')}">
+                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('tel')}">
+                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">連絡先メールアドレス</label>
+                    <label for="email">連絡先メールアドレス</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('email')}">
-                            <li th:each="err : ${#fields.errors('email')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('email')}">
+                            <nobr th:each="err : ${#fields.errors('email')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+                    <div th:unless="${#fields.hasErrors('email')}">
+                         <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('email')}">
+                        <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="oldPrefectureId">転居元住所（都道府県）</label>
+                    <label for="oldPrefectureId">転居元住所（都道府県）</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('oldPrefectureId')}">
-                            <li th:each="err : ${#fields.errors('oldPrefectureId')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('oldPrefectureId')}">
+                            <nobr th:each="err : ${#fields.errors('oldPrefectureId')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
                     <select id="oldPrefectureId" name="oldPrefectureId" class="form-control">
                         <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{oldPrefectureId}">[[${prefecture.prefectureName}]]</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="oldAddress">転居元住所（市区町村以下）</label>
+                    <label for="oldAddress">転居元住所（市区町村以下）</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('oldAddress')}">
-                            <li th:each="err : ${#fields.errors('oldAddress')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('oldAddress')}">
+                            <nobr th:each="err : ${#fields.errors('oldAddress')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
+                    <div th:unless="${#fields.hasErrors('oldAddress')}">
+                        <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                            class="form-control" value="新宿区西新宿1-1-1"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('oldAddress')}">
+                        <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
+                               class="form-control" value="新宿区西新宿1-1-1" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="newPrefectureId">転居先住所（都道府県）</label>
+                    <label for="newPrefectureId">転居先住所（都道府県）</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('newPrefectureId')}">
-                            <li th:each="err : ${#fields.errors('newPrefectureId')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('newPrefectureId')}">
+                            <nobr th:each="err : ${#fields.errors('newPrefectureId')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
                     <select id="newPrefectureId" name="newPrefectureId" class="form-control">
                         <option th:each="prefecture : ${prefectures}" th:value="${prefecture.prefectureId}" th:field="*{newPrefectureId}">[[${prefecture.prefectureName}]]</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="newAddress">転居先住所（市区町村以下）</label>
+                    <label for="newAddress">転居先住所（市区町村以下）</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('newAddress')}">
-                            <li th:each="err : ${#fields.errors('newAddress')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('newAddress')}">
+                            <nobr th:each="err : ${#fields.errors('newAddress')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
+                    <div th:unless="${#fields.hasErrors('newAddress')}">
+                        <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
                            value="札幌市南区1"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('newAddress')}">
+                        <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
+                               value="札幌市南区1" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>荷物情報</legend>
                 <div class="form-group">
-                    <label for="box">段ボールの個数</label>
+                    <label for="box">段ボールの個数</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('box')}">
-                            <li th:each="err : ${#fields.errors('box')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('box')}">
+                            <nobr th:each="err : ${#fields.errors('box')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
+                    <div th:unless="${#fields.hasErrors('box')}">
+                        <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('box')}">
+                        <input type="text" id="box" name="box" th:field="*{box}" class="form-control" value="10" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="bed">ベッドの個数</label>
+                    <label for="bed">ベッドの個数</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('bed')}">
-                            <li th:each="err : ${#fields.errors('bed')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('bed')}">
+                            <nobr th:each="err : ${#fields.errors('bed')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
+                    <div th:unless="${#fields.hasErrors('bed')}">
+                        <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('bed')}">
+                        <input type="text" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="bicycle">自転車の個数</label>
+                    <label for="bicycle">自転車の個数</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('bicycle')}">
-                            <li th:each="err : ${#fields.errors('bicycle')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('bicycle')}">
+                            <nobr th:each="err : ${#fields.errors('bicycle')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
+                    <div th:unless="${#fields.hasErrors('bicycle')}">
+                        <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('bicycle')}">
+                        <input type="text" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="washingMachine">洗濯機の個数</label>
+                    <label for="washingMachine">洗濯機の個数</label>&emsp;
                     <font color="RED">
-                        <ul th:if="${#fields.hasErrors('washingMachine')}">
-                            <li th:each="err : ${#fields.errors('washingMachine')}" th:text="${err}"></li>
-                        </ul>
+                        <nobr th:if="${#fields.hasErrors('washingMachine')}">
+                            <nobr th:each="err : ${#fields.errors('washingMachine')}" th:text="${err}"></nobr>
+                        </nobr>
                     </font>
-                    <input type="text" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
+                    <div th:unless="${#fields.hasErrors('washingMachine')}">
+                        <input type="text" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
                            value="1"/>
+                    </div>
+                    <div th:if="${#fields.hasErrors('washingMachine')}">
+                        <input type="text" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
+                               value="1" style="background-color:#FADBDA"/>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="washingMachineInstallation">洗濯機の設置工事申し込み</label>
@@ -135,6 +181,14 @@
                         <option th:value="false" th:text="なし">なし</option>
                         <option th:value="true" th:text="あり">あり</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="washingMachine">自由記述欄</label>&emsp;
+                    <>
+                        <br>
+                            <input type="text" class="form-control"/>
+                        <br>
+                    <textarea rows="10">お問い合わせ内容</textarea>
                 </div>
             </fieldset>
             <div class="form-group">
