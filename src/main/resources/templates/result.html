@@ -16,8 +16,8 @@
   <form th:action="@{/order}" th:object="${userOrderForm}" class="form-horizontal" method="post">
     <h1>概算お見積り結果</h1>
     <div class="col-sm-12">
-      <h2>概算お見積り結果は
-        
+      <h2>概算お見積り結果は￥
+
         <font color="#ff0000">
           <span th:text="${price}"></span>
           </font>
@@ -98,6 +98,18 @@
           <th>洗濯機の設置工事申し込み</th>
           <td><span th:text="*{washingMachineInstallation} ? 'あり' : 'なし'"></span></td>
           <input type="hidden" name="washingMachineInstallation" id="washingMachineInstallation" th:value="*{washingMachineInstallation}"/>
+        </tr>
+        </tbody>
+      </table>
+      <h4>お問い合わせ内容</h4>
+      <table class="table table-bordered">
+        <col span="1" style="background-color: #A9B7C7;">
+        <col span="2" style="background-color: #FFFFFF;">
+        <tbody>
+        <tr>
+          <th style="width: 40%">お問い合わせ内容</th>
+          <td><span th:text="*{comment}"></span></td>
+          <input type="hidden" name="comment" id="comment" th:value="*{comment}"/>
         </tr>
         </tbody>
       </table>

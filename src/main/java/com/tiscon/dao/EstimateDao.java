@@ -94,7 +94,7 @@ public class EstimateDao {
         String sql = "SELECT DISTANCE FROM (" +
                 "SELECT PREFECTURE_ID_FROM, PREFECTURE_ID_TO, DISTANCE FROM PREFECTURE_DISTANCE UNION ALL " +
                 "SELECT PREFECTURE_ID_TO PREFECTURE_ID_FROM ,PREFECTURE_ID_FROM PREFECTURE_ID_TO ,DISTANCE FROM PREFECTURE_DISTANCE) " +
-                "WHERE PREFECTURE_ID_FROM  = :prefectureIdFrom AND PREFECTURE_ID_TO  = :prefectureIdTo";
+                "WHERE PREFECTURE_ID_FROM  = :prefectureIdFrom AND PREFECTURE_ID_TO  = :prefectureIdTo AND rownum = 1";
 
         PrefectureDistance prefectureDistance = new PrefectureDistance();
         prefectureDistance.setPrefectureIdFrom(prefectureIdFrom);
