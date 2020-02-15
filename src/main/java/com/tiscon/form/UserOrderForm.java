@@ -54,6 +54,8 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
+    private String comment;
+
     public String getCustomerName() {
         return customerName;
     }

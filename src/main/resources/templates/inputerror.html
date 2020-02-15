@@ -26,10 +26,10 @@
                         </nobr>
                     </font>
                     <div th:unless="${# fields.hasErrors('customerName')}">
-                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎">
+                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" placeholder="例)山田太郎">
                     </div>
                     <div th:if="${# fields.hasErrors('customerName')}">
-                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" style="background-color:#FADBDA">
+                        <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎" style="background-color:#FADBDA" placeholder="例)山田太郎">
                     </div>
                 </div>
                 <div class="form-group">
@@ -40,10 +40,10 @@
                         </nobr>
                     </font>
                     <div th:unless="${#fields.hasErrors('tel')}">
-                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" placeholder="例)00034567890"/>
                     </div>
                     <div th:if="${#fields.hasErrors('tel')}">
-                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" style="background-color:#FADBDA"/>
+                        <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678" style="background-color:#FADBDA" placeholder="例)00034567890"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -54,10 +54,10 @@
                         </nobr>
                     </font>
                     <div th:unless="${#fields.hasErrors('email')}">
-                         <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+                         <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" placeholder="例)test@test.com"/>
                     </div>
                     <div th:if="${#fields.hasErrors('email')}">
-                        <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" style="background-color:#FADBDA"/>
+                        <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com" style="background-color:#FADBDA" placeholder="例)test@test.com"/>
                     </div>
                 </div>
                 <div class="form-group">
