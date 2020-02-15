@@ -17,12 +17,24 @@ body {
 }
 
 .btn-primary {
-    background: #FBC0AF;
+    background: #FF8856;
     border-color: #FBC0AF;
 }
 
+.btn-primary:active {
+     /*ボタンを押したとき*/
+     -webkit-transform: translateY(5px);
+     transform: translateY(5px);/*下に動く*/
+     border-bottom: none;/*線を消す*/
+}
+
 .btn-top {
-    width: 30%;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 350px;
+    font-size: 180%;
 }
 
 .ui.main.container {
