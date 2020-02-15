@@ -74,26 +74,24 @@ public class EstimateController {
      * @param model         遷移先に連携するデータ
      * @return 遷移先
      */
+
+
     @PostMapping(value = "submit", params = "confirm")
-    String confirm(UserOrderForm userOrderForm, Model model) {
+    String confirm(@Validated UserOrderForm userOrderForm, BindingResult submit, Model model) {
+        if (submit.hasErrors()) {
 
-        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
-        model.addAttribute("userOrderForm", userOrderForm);
-        return "confirm";
+            model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+            model.addAttribute("userOrderForm", userOrderForm);
+            return "inputerror";
+        }
+        else {
+            model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+            model.addAttribute("userOrderForm", userOrderForm);
+            return "confirm";
+        }
+
     }
 
-
-    /**
-     * エラー
-
-    @PostMapping(value = "submit", params = "inputerror")
-    String inputerror(UserOrderForm userOrderForm, Model model) {
-
-        model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
-        model.addAttribute("userOrderForm", userOrderForm);
-        return "inputerror";
-    }
-    */
 
     /**
      * 入力画面に戻る。
