@@ -101,6 +101,18 @@
         </tr>
         </tbody>
       </table>
+      <h4>お問い合わせ内容</h4>
+      <table class="table table-bordered">
+        <col span="1" style="background-color: #A9B7C7;">
+        <col span="2" style="background-color: #FFFFFF;">
+        <tbody>
+        <tr>
+          <th style="width: 40%">お問い合わせ内容</th>
+          <td><span th:text="*{comment}"></span></td>
+          <input type="hidden" name="comment" id="comment" th:value="*{comment}"/>
+        </tr>
+        </tbody>
+      </table>
       <div class="form-group">
         <div class="text-center">
           <button type="submit" name="backToConfirm" class="btn btn-primary">戻る</button>
